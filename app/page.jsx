@@ -4,14 +4,19 @@ import ContactForm from "@/components/ContactForm";
 import Icon from "@/components/Icon";
 import { services, pillars, missions, advantages, stats } from "@/components/data";
 
-const HERO_BG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCeZEVbZHBLgCi3zNyYpYl97usDTn0TRkzXsY1G28OnYNpPThoVh_aUJAEq-0Hi1Z8Z-3vWjtV4cTrBr-0kHqhXbgANWo7g3hxR1YN-_Q08SOZcD58VYvt0H7REha_Yl_wYlwvVLGUfPPvOnGvt7GCBKthW-FgHZ9BbzBTBBfneGP9nyG6hPNBt04Z562SIZq0hBq7GY4nMz_G3hTHwlcK7SNYxx279McQGUKUt1ugP";
+const HERO_BG = "/hero-bg.webp";
 const ORE_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuARwpNC4_fDwyeJwT--pDiERh2Rk875H3-ev77fiFXQiWWxXCUJpPykHW6zF55Zyy94bVdg-UTABzHhR7JAliJ7GoppvrDu9391AcPVWC1nbS2ynr7a2Byw83CW0PKr1NfzITJwIu9ixbJNMVW8ihKPoxqBwYy-EJo08_34DRVzCG5IikQ6VceWapN5OUg7UDUSkGBy01N8Z_Lc_EgETniAw92_za7wLNPJv0qA_gjo";
 
 const wrap = "max-w-7xl mx-auto px-6 lg:px-12";
 const eyebrow = "font-label-caps text-label-caps tracking-widest uppercase font-bold";
 const h2 = "font-headline-lg text-headline-lg uppercase tracking-tight";
+const legalDetails = [
+  ["Domicile", "District 8 SCBD, Jakarta"],
+  ["Jurisdiction", "DKI Jakarta, Indonesia"],
+  // CLIENT-CONFIRM
+  ["Sector", "Commodity & Material Trading"],
+];
 
 export default function Home() {
   return (
@@ -64,45 +69,44 @@ export default function Home() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="w-full py-28 bg-surface">
-          <div className={`${wrap} space-y-16`}>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div>
+        <section id="about" className="w-full py-20 bg-surface">
+          <div className={`${wrap} space-y-12`}>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <div className="min-w-0">
                 <span className={`${eyebrow} text-primary`}>CORPORATE OVERVIEW</span>
-                <h2 className={`${h2} text-on-surface mt-2`}>About PT Bumi Sada Mineral</h2>
+                <h2 className="mt-2 font-headline-lg text-[clamp(1.75rem,3vw,2.5rem)] leading-tight text-on-surface uppercase tracking-tight">ABOUT PT BUMI SADA MINERAL</h2>
               </div>
-              <div className="flex items-center gap-2 text-on-surface-variant font-label-mono-stat text-label-mono-stat bg-surface-container px-3 py-1.5 rounded">
-                <span className="w-2 h-2 rounded-full bg-secondary" />INDONESIA COMMERCIAL REGISTERED TRADING HOUSE
+              <div className="flex items-center gap-2 rounded bg-surface-container px-3 py-1.5 font-label-mono-stat text-label-mono-stat text-on-surface-variant">
+                <span className="w-2 h-2 rounded-full bg-secondary" />REGISTERED TRADING COMPANY
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <div className="lg:col-span-7 space-y-6">
-                <p className="font-body-lg text-body-lg text-on-surface leading-relaxed">Established in 2023, we take a vital role in supporting the commodity and material supply chain for various development and industrial activities. We connect market needs with resource availability through strategic partnerships to create sustainable value in the commodity and material sector.</p>
-                <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">Acting as a dependable bridge between primary extraction sites across the Indonesian archipelago and strategic manufacturing hubs, PT Bumi Sada Mineral upholds stringent quality assurance, institutional contracts, and responsive transshipment corridors to secure domestic energy and infrastructure demands.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+            <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
+              <div className="flex min-w-0 flex-col gap-6 lg:col-span-7">
+                <p className="max-w-3xl font-body-lg text-body-lg leading-relaxed text-on-surface">Established in 2023, we support the commodity and material supply chain for industrial and development activities, connecting market needs with resource availability through strategic partnerships.</p>
+                <div className="grid auto-rows-fr grid-cols-1 items-stretch gap-4 sm:grid-cols-3">
                   {pillars.map(([icon, color, title, text]) => (
-                    <div key={title} className="bg-surface-container-low p-6 rounded shadow-sm hover:shadow-md transition-shadow">
-                      <Icon name={icon} className={`${color} text-[28px] mb-2`} />
-                      <h4 className="font-headline-sm text-headline-sm text-on-surface uppercase mb-1">{title}</h4>
-                      <p className="font-body-sm text-body-sm text-on-surface-variant">{text}</p>
+                    <div key={title} className="flex h-full min-w-0 flex-col items-start rounded bg-surface-container-low p-5 shadow-sm transition-shadow hover:shadow-md">
+                      <Icon name={icon} className={`${color} mb-2 text-[28px]`} />
+                      <h4 className="font-headline-sm text-[clamp(1rem,1.3vw,1.25rem)] leading-[1.25] uppercase text-on-surface [overflow-wrap:anywhere]">{title}</h4>
+                      <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">{text}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="lg:col-span-5 bg-surface-container p-8 md:p-10 rounded shadow-md space-y-6">
-                <div className="flex items-center justify-between">
+              <div className="flex h-full min-w-0 flex-col gap-5 rounded bg-surface-container p-6 shadow-md md:p-8 lg:col-span-5">
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
                   <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
                   <span className="px-2.5 py-1 bg-secondary-container text-on-secondary-container font-label-mono-stat text-label-mono-stat rounded uppercase font-semibold">Active Standing</span>
                 </div>
                 <div className="space-y-1">
                   <span className="font-headline-lg text-headline-lg font-bold text-on-surface block leading-none">JUNE 09, 2023</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant block">Establishment Date under Law of Republic of Indonesia</span>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant block">Established under Indonesian law.</span>
                 </div>
-                <div className="space-y-3 bg-surface-container-lowest p-5 rounded font-body-sm text-body-sm">
-                  {[["Commercial Domicile", "District 8 SCBD Jakarta", ""], ["Entity Jurisdiction", "DKI Jakarta, Indonesia", ""], ["Trade Desk Status", "Authorized Commodity Trader", "text-secondary"]].map(([k, v, c]) => (
-                    <div key={k} className="flex justify-between items-center">
-                      <span className="text-on-surface-variant">{k}</span>
-                      <span className={`font-semibold ${c || "text-on-surface"}`}>{v}</span>
+                <div className="min-w-0 rounded bg-surface-container-lowest px-4 py-1 font-body-sm text-body-sm">
+                  {legalDetails.map(([label, value], index) => (
+                    <div key={label} className={`grid grid-cols-[8.5rem_minmax(0,1fr)] items-start gap-x-3 py-3 ${index < legalDetails.length - 1 ? "border-b border-surface-container" : ""}`}>
+                      <span className="text-on-surface-variant">{label}</span>
+                      <span className="min-w-0 break-words font-semibold text-on-surface">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -124,15 +128,14 @@ export default function Home() {
               <h2 className={`${h2} text-on-surface`}>Strategic Commodities &amp; Industrial Services</h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant">Comprehensive trade solutions connecting resource extraction with nationwide industrial demand.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid auto-rows-fr grid-cols-1 items-stretch gap-8 md:grid-cols-2">
               {services.map((s) => (
-                <div key={s.kbli} className="bg-surface-container-lowest p-8 lg:p-10 rounded shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div key={s.title} className="flex h-full flex-col justify-between rounded bg-surface-container-lowest p-8 shadow-sm transition-all duration-300 hover:shadow-xl group lg:p-10">
                   <div className="space-y-6">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center">
                       <div className="w-14 h-14 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d={s.icon} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" /></svg>
                       </div>
-                      <span className="font-label-mono-stat text-label-mono-stat text-on-surface-variant bg-surface-container-high px-2.5 py-1 rounded">{s.kbli}</span>
                     </div>
                     <div className="space-y-1">
                       <h3 className="font-headline-md text-headline-md text-on-surface uppercase">{s.title}</h3>
