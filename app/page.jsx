@@ -17,21 +17,21 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full pt-28 bg-surface">
+      <main className="w-full bg-surface">
         {/* HERO */}
-        <section id="home" className="relative w-full -mt-28 min-h-[92vh] flex flex-col justify-between overflow-hidden bg-on-surface">
+        <section id="home" className="relative w-full min-h-[calc(100svh_-_var(--header-h)_-_var(--topbar-h))] flex flex-col justify-between overflow-hidden bg-on-surface">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${HERO_BG}')` }} />
           <div className="absolute inset-0 bg-gradient-to-r from-on-surface/95 via-on-surface/85 to-on-surface/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-on-surface/40" />
-          <div className={`relative z-10 ${wrap} pt-40 pb-20 w-full my-auto`}>
-            <div className="max-w-4xl space-y-6">
+          <div className={`relative z-10 ${wrap} py-14 lg:py-20 w-full my-auto`}>
+            <div className="max-w-none space-y-6">
               <div className="inline-flex items-center gap-3 px-3.5 py-1.5 bg-surface/10 backdrop-blur-md rounded">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="font-label-caps text-label-caps tracking-widest text-surface uppercase">EST. JUNE 09, 2023 • INDONESIA COMMODITY &amp; MATERIAL TRADING</span>
               </div>
-              <h1 className="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-surface tracking-tight uppercase font-bold">
-                From Resources to Industry.<br />
-                <span className="text-primary-fixed">From Supply to Opportunity.</span>
+              <h1 className="font-display-hero text-[clamp(1.75rem,4.5vw,4rem)] leading-[1.08] [text-wrap:balance] text-surface tracking-tight uppercase font-bold sm:text-[clamp(2.25rem,4.5vw,4rem)]">
+                <span className="block xl:whitespace-nowrap">From Resources to Industry.</span>
+                <span className="block text-primary-fixed xl:whitespace-nowrap">From Supply to Opportunity.</span>
               </h1>
               <p className="font-body-lg text-body-lg text-surface-container-high max-w-2xl font-light">
                 Connecting market needs with resource availability seamlessly and sustainably through institutional grade procurement, rigorous assay control, and strategic nationwide logistics.
@@ -153,15 +153,16 @@ export default function Home() {
         <section id="vision-mission" className="w-full py-28 bg-surface">
           <div className={wrap}>
             <div className="grid grid-cols-1 lg:grid-cols-12 rounded-xl overflow-hidden shadow-2xl">
-              <div className="lg:col-span-5 bg-on-surface text-surface p-10 lg:p-14 flex flex-col justify-between">
-                <div className="space-y-8">
-                  <span className={`${eyebrow} text-primary-fixed`}>LONG-TERM ASPIRATION</span>
+              <div className="relative isolate lg:col-span-5 overflow-hidden bg-on-surface text-surface p-6 lg:p-14 flex flex-col justify-between">
+                <Icon name="visibility" className="absolute right-5 top-20 -z-10 text-[clamp(10rem,22vw,20rem)] leading-none text-surface opacity-[0.06] pointer-events-none" />
+                <div className="relative space-y-8">
+                  <span className={`${eyebrow} text-surface/75`}>LONG-TERM ASPIRATION</span>
                   <h3 className={`${h2} text-surface`}>Our Vision</h3>
-                  <blockquote className="font-body-lg text-body-lg text-surface-container-high leading-relaxed italic border-l-2 border-primary pl-4">
-                    “To become a trusted commodity ecosystem driver that connects resources with industrial opportunities in creating sustainable industry needs.”
+                  <blockquote className="max-w-[28em] border-l-2 border-primary pl-4 text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.3] italic text-white">
+                    <span className="text-tertiary-fixed not-italic">“</span>To become a trusted commodity ecosystem driver that connects resources with industrial opportunities in creating sustainable industry needs.<span className="text-tertiary-fixed not-italic">”</span>
                   </blockquote>
                 </div>
-                <div className="pt-12">
+                <div className="relative pt-12">
                   <div className="bg-surface/5 p-6 rounded backdrop-blur-sm space-y-4">
                     <span className="font-label-caps text-label-caps uppercase text-surface tracking-wider block">Integrated Flow Pipeline</span>
                     <div className="flex items-center justify-between font-label-mono-stat text-label-mono-stat text-surface-container-high">
