@@ -69,54 +69,50 @@ export default function Home() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="w-full py-20 bg-surface">
-          <div className={`${wrap} space-y-12`}>
+        <section id="about" className="w-full bg-surface">
+          <div className={`${wrap} space-y-8 pt-20`}>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <div className="min-w-0">
                 <span className={`${eyebrow} text-primary`}>CORPORATE OVERVIEW</span>
                 <h2 className="mt-2 font-headline-lg text-[clamp(1.75rem,3vw,2.5rem)] leading-tight text-on-surface uppercase tracking-tight">ABOUT PT BUMI SADA MINERAL</h2>
               </div>
-              <div className="flex items-center gap-2 rounded bg-surface-container px-3 py-1.5 font-label-mono-stat text-label-mono-stat text-on-surface-variant">
-                <span className="w-2 h-2 rounded-full bg-secondary" />REGISTERED TRADING COMPANY
-              </div>
             </div>
-            <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
-              <div className="flex min-w-0 flex-col gap-6 lg:col-span-7">
-                <p className="max-w-3xl font-body-lg text-body-lg leading-relaxed text-on-surface">Established in 2023, we support the commodity and material supply chain for industrial and development activities, connecting market needs with resource availability through strategic partnerships.</p>
-                <div className="grid auto-rows-fr grid-cols-1 items-stretch gap-4 sm:grid-cols-3">
-                  {pillars.map(([icon, color, title, text]) => (
-                    <div key={title} className="flex h-full min-w-0 flex-col items-start rounded bg-surface-container-low p-5 shadow-sm transition-shadow hover:shadow-md">
-                      <Icon name={icon} className={`${color} mb-2 text-[28px]`} />
-                      <h4 className="font-headline-sm text-[clamp(1rem,1.3vw,1.25rem)] leading-[1.25] uppercase text-on-surface [overflow-wrap:anywhere]">{title}</h4>
-                      <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">{text}</p>
-                    </div>
-                  ))}
+            <div className="grid grid-cols-1 items-start gap-y-8 gap-x-12 lg:grid-cols-12 lg:gap-x-16">
+                <p className="min-w-0 font-body-lg text-body-lg leading-relaxed text-on-surface lg:col-span-7">Established in 2023, we support the commodity and material supply chain for industrial and development activities, connecting market needs with resource availability through strategic partnerships.</p>
+                <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
+                  <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                    <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
+                    <span className="inline-flex items-center gap-2 font-label-mono-stat text-label-mono-stat uppercase font-semibold text-secondary"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-secondary" />Active Standing</span>
+                  </div>
+                  <div className="space-y-2">
+                    <span className="block font-headline-lg text-headline-lg font-bold leading-none text-on-surface">JUNE 09, <span className="text-primary">2023</span></span>
+                    <span className="block font-body-sm text-body-sm text-on-surface-variant">Established under Indonesian law.</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex h-full min-w-0 flex-col gap-5 rounded bg-surface-container p-6 shadow-md md:p-8 lg:col-span-5">
-                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-                  <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
-                  <span className="px-2.5 py-1 bg-secondary-container text-on-secondary-container font-label-mono-stat text-label-mono-stat rounded uppercase font-semibold">Active Standing</span>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-headline-lg text-headline-lg font-bold text-on-surface block leading-none">JUNE 09, 2023</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant block">Established under Indonesian law.</span>
-                </div>
-                <div className="min-w-0 rounded bg-surface-container-lowest px-4 py-1 font-body-sm text-body-sm">
-                  {legalDetails.map(([label, value], index) => (
-                    <div key={label} className={`grid grid-cols-[8.5rem_minmax(0,1fr)] items-start gap-x-3 py-3 ${index < legalDetails.length - 1 ? "border-b border-surface-container" : ""}`}>
-                      <span className="text-on-surface-variant">{label}</span>
-                      <span className="min-w-0 break-words font-semibold text-on-surface">{value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="relative w-full h-32 rounded overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="Polished mineral core sample" className="w-full h-full object-cover" src={ORE_IMG} />
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
-                </div>
-              </div>
             </div>
+            <div className="relative h-[220px] min-w-0 w-full overflow-hidden rounded-lg sm:h-[320px] lg:h-[380px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt="Polished mineral core sample" className="h-full w-full object-cover object-[50%_35%]" src={ORE_IMG} />
+            </div>
+          </div>
+          <div className="w-full bg-on-surface">
+            <div className={`${wrap} grid min-w-0 grid-cols-1 sm:grid-cols-3 sm:py-2`}>
+                {legalDetails.map(([label, value]) => (
+                  <div key={label} className="min-w-0 border-b border-white/10 py-4 last:border-b-0 sm:border-b-0 sm:border-l sm:py-5 sm:pl-6 sm:first:border-l-0 sm:first:pl-0">
+                    <span className="block font-label-caps text-label-caps uppercase text-tertiary-fixed">{label}</span>
+                    <span className="mt-2 block break-words font-body-sm text-body-sm font-semibold text-white">{value}</span>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div className={`${wrap} grid min-w-0 grid-cols-1 gap-x-6 gap-y-8 py-10 sm:grid-cols-3 lg:py-12`}>
+                {pillars.map(([icon, color, title, text]) => (
+                  <div key={title} className="min-w-0 border-t border-slate-200 pt-4">
+                    <Icon name={icon} className={`${color} mb-2 text-[26px]`} />
+                    <h4 className="min-h-12 font-headline-sm text-lg leading-tight uppercase text-on-surface">{title}</h4>
+                    <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">{text}</p>
+                  </div>
+                ))}
           </div>
         </section>
 
@@ -196,12 +192,6 @@ export default function Home() {
                         </div>
                       </div>
                     ))}
-                  </div>
-                </div>
-                <div className="pt-8">
-                  <div className="p-4 bg-surface-container rounded flex items-center gap-3">
-                    <Icon name="corporate_fare" className="text-primary text-[24px]" />
-                    <span className="font-body-sm text-body-sm text-on-surface font-medium">Fully aligned with Indonesia&apos;s national industrial downstreaming (Hilirisasi) policy.</span>
                   </div>
                 </div>
               </div>

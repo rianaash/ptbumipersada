@@ -10,15 +10,7 @@ const NAV = [
 export default function Header() {
   return (
     <>
-      <div className="h-[var(--topbar-h)] bg-on-surface text-surface">
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-12 text-[10px] sm:text-[11px]">
-          <span className="whitespace-nowrap uppercase tracking-wider">Jakarta (SCBD) • Mon - Fri: 08:30 - 17:30 WIB</span>
-          <span className="hidden whitespace-nowrap sm:inline">
-            <span className="uppercase">Desk:</span>{" "}
-            <a href="mailto:corporate@bumisadamineral.com" className="normal-case hover:text-primary-fixed">corporate@bumisadamineral.com</a>
-          </span>
-        </div>
-      </div>
+      
       <header className="sticky top-0 z-50 h-[var(--header-h)] border-b border-on-surface/15 bg-white">
         <div className="relative mx-auto grid h-full max-w-7xl grid-cols-[1fr_auto] items-center px-6 lg:px-12 xl:grid-cols-[1fr_auto_1fr]">
           <Link href="/" aria-label="PT Bumi Sada Mineral" className="flex w-fit shrink-0 items-center gap-3">
