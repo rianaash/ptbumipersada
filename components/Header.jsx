@@ -21,15 +21,23 @@ export default function Header() {
       </div>
       <header className="sticky top-0 z-50 h-[var(--header-h)] border-b border-on-surface/15 bg-white">
         <div className="relative mx-auto grid h-full max-w-7xl grid-cols-[1fr_auto] items-center px-6 lg:px-12 xl:grid-cols-[1fr_auto_1fr]">
-          <Link href="#home" aria-label="PT Bumi Sada Mineral" className="w-fit shrink-0">
+          <Link href="/" aria-label="PT Bumi Sada Mineral" className="flex w-fit shrink-0 items-center gap-3">
             <Image
-              src="/logo-bsm-header.jpg"
-              alt="PT Bumi Sada Mineral"
-              width={830}
-              height={360}
+              src="/icon.png"
+              alt="Bumi Sada Mineral logo"
+              width={512}
+              height={512}
               priority
-              className="h-10 w-auto object-contain sm:h-12 xl:h-14"
+              className="h-10 w-10 object-contain sm:h-12 sm:w-12 xl:h-14 xl:w-14"
             />
+            <span className="flex min-w-0 flex-col whitespace-nowrap">
+              <span className="font-headline-sm text-[18px] font-extrabold uppercase leading-none tracking-[-0.03em] text-on-surface min-[380px]:text-[20px] sm:text-[24px] xl:text-[26px]">
+                Bumi Sada
+              </span>
+              <span className="mt-1 text-[10px] font-semibold uppercase leading-none tracking-[0.3em] text-primary min-[380px]:text-[11px] sm:text-[12px]">
+                Mineral
+              </span>
+            </span>
           </Link>
           <HeaderNavigation navItems={NAV} />
         </div>
