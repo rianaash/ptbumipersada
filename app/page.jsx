@@ -70,30 +70,26 @@ export default function Home() {
 
         {/* ABOUT */}
         <section id="about" className="w-full bg-surface">
-          <div className={`${wrap} space-y-8 pt-20`}>
+          <div className={`${wrap} space-y-8 pt-20 pb-10 lg:pb-16`}>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <div className="min-w-0">
                 <span className={`${eyebrow} text-primary`}>CORPORATE OVERVIEW</span>
                 <h2 className="mt-2 font-headline-lg text-[clamp(1.75rem,3vw,2.5rem)] leading-tight text-on-surface uppercase tracking-tight">ABOUT PT BUMI SADA MINERAL</h2>
               </div>
             </div>
-            <div className="grid grid-cols-1 items-start gap-y-8 gap-x-12 lg:grid-cols-12 lg:gap-x-16">
-                <p className="min-w-0 font-body-lg text-body-lg leading-relaxed text-on-surface lg:col-span-7">Established in 2023, we support the commodity and material supply chain for industrial and development activities, connecting market needs with resource availability through strategic partnerships.</p>
-                <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
-                  <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-                    <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
-                  </div>
-                  <div className="space-y-2">
-                    <span className="block font-headline-lg text-headline-lg font-bold leading-none text-on-surface">JUNE 09, <span className="text-primary">2023</span></span>
-                    <span className="block font-body-sm text-body-sm text-on-surface-variant">Established under Indonesian law.</span>
-                  </div>
+            <div className="grid grid-cols-1 items-start gap-x-12 gap-y-8 md:grid-cols-2 lg:gap-x-16">
+              <p className="min-w-0 font-body-lg text-body-lg leading-relaxed text-on-surface">Established in 2023, we support the commodity and material supply chain for industrial and development activities, connecting market needs with resource availability through strategic partnerships.</p>
+              <div className="flex min-w-0 flex-col items-start gap-2">
+                <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
+                <span className="block font-headline-lg text-headline-lg font-bold leading-none text-on-surface">JUNE 09, <span className="text-primary">2023</span></span>
+                <span className="block font-body-sm text-body-sm text-on-surface-variant">Established under Indonesian law.</span>
                 </div>
             </div>
           </div>
           <div className="w-full bg-on-surface">
-            <div className={`${wrap} grid min-w-0 grid-cols-1 sm:grid-cols-3 sm:py-2`}>
+            <div className={`${wrap} grid min-w-0 grid-cols-1 md:grid-cols-3`}>
                 {legalDetails.map(([label, value]) => (
-                  <div key={label} className="min-w-0 border-b border-white/10 py-4 last:border-b-0 sm:border-b-0 sm:border-l sm:py-5 sm:pl-6 sm:first:border-l-0 sm:first:pl-0">
+                  <div key={label} className="min-w-0 border-b border-white/10 py-8 last:border-b-0 md:border-b-0 md:border-l md:first:border-l-0 md:pl-6 md:first:pl-0">
                     <span className="block font-label-caps text-label-caps uppercase text-tertiary-fixed">{label}</span>
                     <span className="mt-2 block break-words font-body-sm text-body-sm font-semibold text-white">{value}</span>
                   </div>
