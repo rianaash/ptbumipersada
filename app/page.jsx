@@ -82,7 +82,6 @@ export default function Home() {
                 <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
                   <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
                     <span className={`${eyebrow} text-primary`}>LEGAL INCORPORATION</span>
-                    <span className="inline-flex items-center gap-2 font-label-mono-stat text-label-mono-stat uppercase font-semibold text-secondary"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-secondary" />Active Standing</span>
                   </div>
                   <div className="space-y-2">
                     <span className="block font-headline-lg text-headline-lg font-bold leading-none text-on-surface">JUNE 09, <span className="text-primary">2023</span></span>
