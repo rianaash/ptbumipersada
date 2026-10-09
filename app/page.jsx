@@ -89,10 +89,6 @@ export default function Home() {
                   </div>
                 </div>
             </div>
-            <div className="relative h-[220px] min-w-0 w-full overflow-hidden rounded-lg sm:h-[320px] lg:h-[380px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="Polished mineral core sample" className="h-full w-full object-cover object-[50%_35%]" src={ORE_IMG} />
-            </div>
           </div>
           <div className="w-full bg-on-surface">
             <div className={`${wrap} grid min-w-0 grid-cols-1 sm:grid-cols-3 sm:py-2`}>
